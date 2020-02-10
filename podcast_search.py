@@ -11,9 +11,6 @@ response = requests.get('https://itunes.apple.com/search?term=finanzen&entity=po
  #   return text
 
 json_data = json.loads(response.text)
-
-print(len(json_data['results']))
-print(json_data['results'])
 #print Url print(json_data['results'][0]['feedUrl'])
 feed_list = []
 for feed in json_data['results']:
