@@ -20,8 +20,27 @@ for url in url_list:
         pod_date['summary'] = item.findtext('{http://www.itunes.com/dtds/podcast-1.0.dtd}summary')
         pod_data.append(pod_date)
 
-print(pod_data)
+#print all episodes of all podcasts relevant to search term
+print(len(pod_data))
+
+#search through the json with all episodes
+#define search fields
+search_fields = ['title', 'itunestitle', 'description', 'summary']
+keyword = 'finanzen'
+relevant_episodes = []
+for i in pod_data:
+    for key,value in i.items():
+        #print(value)
+        if keyword in str(value):
+           #print(True)
+           relevant_episodes.append(i)
+
+
+print(len(relevant_episodes))
+
+
+#export json
 with open('pod_data.json', 'w', encoding='utf8') as json_file:
     json.dump(pod_data , json_file, ensure_ascii=False)
 
-#end of test
+
