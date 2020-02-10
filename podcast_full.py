@@ -41,15 +41,39 @@ for reg_url in feed_list:
     for item in xmldoc.iterfind('channel/item'):
         pod_date = {}
         pod_date['title'] = item.findtext('title')
-        pod_date['itunes_title'] = item.findtext('{http://www.itunes.com/dtds/podcast-1.0.dtd}title')
-        pod_date['episode']=item.findtext('{http://www.itunes.com/dtds/podcast-1.0.dtd}episode')
-        pod_date['date'] = item.findtext('pubDate')
-        pod_date['link'] = item.findtext('link')
-        pod_date['author'] = item.findtext('{http://www.itunes.com/dtds/podcast-1.0.dtd}author')
-        pod_date['description'] = item.findtext('description')
-        pod_date['summary'] = item.findtext('{http://www.itunes.com/dtds/podcast-1.0.dtd}summary')
+        pod_date['itunes_title'] = str(item.findtext('{http://www.itunes.com/dtds/podcast-1.0.dtd}title'))
+        pod_date['episode']=str(item.findtext('{http://www.itunes.com/dtds/podcast-1.0.dtd}episode'))
+        pod_date['date'] = str(item.findtext('pubDate'))
+        pod_date['link'] = str(item.findtext('link'))
+        #pod_date['alternative_link'] = item.enclosure['url'].text
+        pod_date['author'] = str(item.findtext('{http://www.itunes.com/dtds/podcast-1.0.dtd}author'))
+        pod_date['description'] = str(item.findtext('description'))
+        pod_date['summary'] = str(item.findtext('{http://www.itunes.com/dtds/podcast-1.0.dtd}summary'))
         pod_data.append(pod_date)
 
 print(len(pod_data))
+#print(pod_data)
 with open('pod_data_full.json', 'w', encoding='utf8') as json_file:
-    json.dump(pod_data , json_file, ensure_ascii=True)
+    json.dump(pod_data , json_file, ensure_ascii=False)
+
+
+#find relevant episodes
+relevant_episodes = []
+for i in pod_data:
+    for value in i.values():
+        #print(str(value))
+        if search_term in value:
+            #check if item is in list
+            #print(str(value))
+            if i in relevant_episodes:
+                continue
+            else:
+                relevant_episodes.append(i)
+           #print(True)
+
+print(len(relevant_episodes))
+#if len(relevant_episodes) < 5:
+   # print(relevant_episodes)
+#print(relevant_episodes)
+with open('relevant_episodes.json', 'w', encoding='utf8') as json_file:
+    json.dump(relevant_episodes , json_file, ensure_ascii=False)

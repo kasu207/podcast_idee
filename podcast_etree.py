@@ -26,21 +26,24 @@ print(len(pod_data))
 #search through the json with all episodes
 #define search fields
 search_fields = ['title', 'itunestitle', 'description', 'summary']
-keyword = 'finanzen'
+keyword = 'Altersvorsorge'
 relevant_episodes = []
 for i in pod_data:
     for key,value in i.items():
-        #print(value)
+        #print(str(value))
         if keyword in str(value):
+            #check if item is in list
+            if i in relevant_episodes:
+                continue
+            else:
+                relevant_episodes.append(i)
            #print(True)
-           relevant_episodes.append(i)
-
 
 print(len(relevant_episodes))
-
+print(relevant_episodes)
 
 #export json
-with open('pod_data.json', 'w', encoding='utf8') as json_file:
-    json.dump(pod_data , json_file, ensure_ascii=False)
+with open('relevant_episodes.json', 'w', encoding='utf8') as json_file:
+    json.dump(relevant_episodes , json_file, ensure_ascii=False)
 
 
