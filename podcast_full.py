@@ -31,6 +31,7 @@ feed_list = []
 for feed in json_data['results']:
     cmd = feed['feedUrl']
     feed_list.append(cmd)
+print(len(feed_list))
 
 pod_data = []
 for reg_url in feed_list:
@@ -57,7 +58,7 @@ with open('pod_data_full.json', 'w', encoding='utf8') as json_file:
     json.dump(pod_data , json_file, ensure_ascii=False)
 
 
-#find relevant episodes
+#find relevant episodes by search-Term
 relevant_episodes = []
 for i in pod_data:
     for value in i.values():
@@ -74,6 +75,6 @@ for i in pod_data:
 print(len(relevant_episodes))
 #if len(relevant_episodes) < 5:
    # print(relevant_episodes)
-#print(relevant_episodes)
+print(type(relevant_episodes))
 with open('relevant_episodes.json', 'w', encoding='utf8') as json_file:
     json.dump(relevant_episodes , json_file, ensure_ascii=False)
