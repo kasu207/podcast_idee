@@ -7,9 +7,9 @@
         <div class="col-sm">
             <div class="card mt-3">
                 <div class="card-body">
-                    <form class="form my-2 my-lg-0" method="POST" action="">
+                    <form class="form my-2 my-lg-0" method="GET" action="{{ url_for('search')}}">
                         <div class="form-group">
-                            <div class="form-group">
+                            <div class="form-group" id="loadpodcasts">
                                 {{ form.podcast.label(class="form-control-label") }}
                                 {% if form.podcast.errors %}
                                 {{ form.podcast(class="form-control form-control-lg is-invalid") }}
@@ -19,7 +19,7 @@
                                     {% endfor %}
                                 </div>
                                 {% else %}
-                                {{ form.podcast(class="form-control form-control-lg") }}
+                                <input type="text" name="search" class="form-control form-control-lg" placeholder="search">
                                 {% endif %}
                             </div>
                         </div>
@@ -27,10 +27,11 @@
                             {{ form.submit(class="btn btn-outline-success my-2 my-sm-0") }}
                         </div>
                     </form>
+                    <!--Load Podcast Data-->
                     {% for cast in podcasts %}
                     <div class="card my-4">
                         <div class="card-header">{{ cast.title }}</div>
-                        <div class="card-footer"><a href={{ cast.link }}>{{ cast.link}}</a></div>
+                        <div class="card-footer"><a href={{ cast.link }}>{{ cast.link }}</a></div>
                     </div>
                     {% endfor %}
                 </div>
