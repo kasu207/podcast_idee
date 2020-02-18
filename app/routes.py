@@ -1,5 +1,6 @@
 from app import app
-from app.forms import PodcastSearchForm, EpisodeSearchForm
+from app.forms import PodcastSearchForm, EpisodeSearchForm, LoginForm
+from app.config import Config
 from flask import Flask, render_template, request, redirect, url_for, flash
 from pymysql import escape_string
 import json
@@ -14,6 +15,16 @@ from urllib.parse import quote
 def index():
     user = {'username':'Philipp'}
     return render_template('index.html', title='Home', user=user)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        flash('Login requested for user {}, remember_me={}'.format(
+            form.username.data, form.remember_me.data))
+        return redirect('/index')
+    user = {'username':'Philipp'}
+    return render_template('login.html', title='Login', form=form, user=user)
 
 @app.route('/podcasts', methods=['GET', 'POST'])
 def podcasts():

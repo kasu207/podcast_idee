@@ -28,8 +28,6 @@ body {
     background: rgba(0,0,0, 0.4);
   }
 
-  .card-columns{
-      @include media-breakpoint-only(lg){
+  .card-columns {
       column-count: 4;
-      }
   }
