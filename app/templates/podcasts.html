@@ -6,19 +6,20 @@
         <div class="col-sm">
             <div class="card mt-3">
                 <div class="card-body">
-                    <form class="form my-2 my-lg-0 border-bottom" method="GET" action="{{ url_for('episodessearch')}}">
+                    <form class="form my-2 my-lg-0 border-bottom" method="GET" action="{{ url_for('podcastsearch')}}">
                         <div class="form-group">
                             <div class="form-group" id="loadpodcasts">
-                                {{ form.episode.label(class="form-control-label") }}
-                                {% if form.episode.errors %}
-                                {{ form.episode(class="form-control form-control-lg is-invalid") }}
+                                {{ form.podcast.label(class="form-control-label") }}
+                                {% if form.podcast.errors %}
+                                {{ form.podcast(class="form-control form-control-lg is-invalid") }}
                                 <div class="invalid-feedback">
-                                    {% for error in form.episode.errors %}
+                                    {% for error in form.podcasts.errors %}
                                     <span> {{error}} </span>
                                     {% endfor %}
                                 </div>
                                 {% else %}
-                                <input type="text" name="search" class="form-control form-control-lg" placeholder="search">
+                                <input type="text" name="search" class="form-control form-control-lg"
+                                    placeholder="search">
                                 {% endif %}
                             </div>
                         </div>
@@ -29,14 +30,27 @@
                     <div class="border-bottom my-2">
                         <h5>Search Results: {{ results }}</h5>
                     </div>
+                    <!--Load Podcasts-->
+                    <div class="card-columns">
+                        {% for data in pod_raw %}
+                        <div class="card my-4">
+                            <img class="card-img-top border-bottom" src="{{ data['artworkUrl100'] }}" alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ data['artistName'] }}</h5>
+                                <p class="card-text">{{ data['collectionName'] }}</p>
+                                <a class="btn btn-primary" href="{{ data['trackViewUrl'] }}">ZUR EPISODE</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                     <!--Load Relevant Results Data-->
+                    <!--
                     {% for cast in podcasts %}
                     <div class="card my-4">
                         <div class="card-header">{{ cast.title }}</div>
-                        <div class="card-body"><textare maxlength="50">{{ cast.description }}</textare></div>
                         <div class="card-footer"><a href={{ cast.link }}>{{ cast.link }}</a></div>
                     </div>
-                    {% endfor %}
+                    {% endfor %}-->
                 </div>
             </div>
         </div>

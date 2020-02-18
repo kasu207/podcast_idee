@@ -14,7 +14,7 @@ body {
     position: -webkit-sticky;
     position: sticky;
     top: 48px;
-    height: calc(100vh - 48px);
+    height: calc(100vh - 20px);
     padding-top: .5rem;
     overflow-x: hidden;
     overflow-y: auto;
@@ -24,3 +24,12 @@ body {
     overflow-y:auto;
     height: 200px;
 }
+.card-img-overlay {
+    background: rgba(0,0,0, 0.4);
+  }
+
+  .card-columns{
+      @include media-breakpoint-only(lg){
+      column-count: 4;
+      }
+  }

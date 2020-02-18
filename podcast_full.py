@@ -37,7 +37,8 @@ pod_data = []
 for reg_url in feed_list:
     hdr = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.3'}
     req = Request(url=reg_url, headers=hdr)
-    var_url = urlopen(req)
+    #var_url = urlopen(req)
+    var_url = requests.get(req)
     xmldoc = parse(var_url)
     for item in xmldoc.iterfind('channel/item'):
         pod_date = {}
