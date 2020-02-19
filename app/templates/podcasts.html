@@ -33,25 +33,23 @@
                     <!--Load Podcasts-->
                     <div class="card-columns">
                         {% for data in pod_raw %}
-                        <div class="card my-3" style="max-width: 540px;">
-                            <div class="row no-gutters border-bottom ">
-                                <div class="col-md-4">
-                                    <img class="card-img-top" width="100%" height="100px"
-                                        src="{{ data['artworkUrl100'] }}" alt="Card image">
+                        <div class="card my-3" style="max-width: 344px; max-height: 148px;">
+                            <div class="row no-gutters ">
+                                <div class="col-md-8">
+                                    <div class="card-body pb-2">
+                                        <div class="card-title elipsis">{{ data['artistName'] }}</div>
+                                        <div class="card-text max-lines mt-1">{{ data['collectionName'] }}</div>
+                                        <a class="card-link" href="{{ data['trackViewUrl'] }}">ZUM PODCAST</a>
+                                    </div>
                                     
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-4">
                                     <div class="card-body">
-                                        <h6 class="card-title">{{ data['artistName'] }}</h5>
-                                        
+                                        <img class="card-img" width="80px" height="80px"
+                                        src="{{ data['artworkUrl100'] }}" alt="Card image">
                                     </div>
                                 </div>
                             </div>
-                            <div class="mx-auto">
-                                <p class="card-text mt-4 border-bottom">{{ data['collectionName'] }}</p>
-                                <a class="btn btn-primary" href="{{ data['trackViewUrl'] }}">ZUM PODCAST</a>
-                            </div>
-
                         </div>
                         {% endfor %}
                     </div>

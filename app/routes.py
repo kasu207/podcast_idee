@@ -11,6 +11,7 @@ from urllib.error import HTTPError
 from urllib.parse import quote
 from flask_login import current_user, login_user, login_required, logout_user
 from app import db
+from werkzeug.urls import url_parse
 from app.models import User
 
 @app.route('/')
@@ -61,6 +62,17 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title='Registrieren', form=form)
 
+#In this case I have a dynamic component in it, 
+# which is indicated as the <username> URL component that 
+# is surrounded by < and >. When a route has a dynamic component, Flask will 
+# accept any text in that portion of the URL, and will invoke the view function with the actual text as an argument.
+@app.route('/user/<username>')
+@login_required
+def user(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    #f you want to get all results, or first() 
+    # if you want to get just the first result or None if there are zero results.
+    return render_template('user.html', user=user)
 
 @app.route('/podcasts', methods=['GET', 'POST'])
 def podcasts():
@@ -81,6 +93,10 @@ def podcastsearch():
         json_data = json.loads(response.text)
         results = len(json_data['results'])
         return render_template('podcasts.html', title='Podcasts-Search', pod_raw=json_data['results'], results=results, form=form)
+
+@app.route('/podcast/<podcastname>')
+def podcast(podcastname):
+    return render_template('podcast_detail.html')
 
 @app.route('/episodes')
 def episodes():

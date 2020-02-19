@@ -13,12 +13,12 @@
         <div class="podscroll">
                 {% for chart in charts %}
                 <a href="{{ chart['url'] }}">
-                    <div class="col mb-5 pb-5">
+                    <div class="col mb-4 pb-3">
                         <div class="card" style="width: 10rem; height:10rem;">
                             <img src="{{ chart['artworkUrl100']}}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <small class="card-title">{{chart['name']}}</small></br>
-                                <small class="card-subtitle">{{chart['artistName']}}</small>
+                                <small class="card-text elipsis">{{chart['name']}}</small></br>
+                                <small class="card-text elipsis">{{ chart['artistName'] }}</small>
                             </div>
                         </div>
                     </div>
