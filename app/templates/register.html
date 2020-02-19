@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-3">
+    <div class="row">
+        <h1>Registrieren</h1>
+    </div>
+    <div class="row">
+        <form class="form-group" action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <!--The form.hidden_tag() template argument generates a 
+                    hidden field that includes a token that is used to protect 
+                    the form against CSRF attacks. All you need to do to have the 
+                    form protected is include this hidden field and have the SECRET_KEY variable defined in the 
+                    Flask configuration. If you take care of these two things, Flask-WTF does the rest for you.-->
+            <div class="form-group">
+                {{ form.username.label(class="form-control-label") }}<br>
+                {{ form.username(class="form-control", placeholder="Nutzername eingeben", size=32) }}
+                {% for error in form.username.errors %}
+                <div class="alert alert-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.email.label(class="form-control-label") }}<br>
+                {{ form.email(class="form-control", placeholder="Emailadresse eingeben") }}
+                {% for error in form.email.errors %}
+                <div class="alert alert-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.password.label(class="form-control-label") }}<br>
+                {{ form.password(class="form-control", type="password", placeholder="Passwort wiederholen") }}
+                {% for error in form.password.errors %}
+                <div class="alert alert-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.password2.label(class="form-control-label") }}<br>
+                {{ form.password2(class="form-control", type="password", placeholder="Passwort", size=32) }}
+                {% for error in form.password2.errors %}
+                <div class="alert alert-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

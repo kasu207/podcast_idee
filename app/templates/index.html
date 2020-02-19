@@ -2,47 +2,32 @@
 
 {% block content %}
 <!--https://nearsoft.com/blog/how-to-create-an-api-and-web-applications-with-flask/-->
-<div class="container mt-3">
-    <div class="row border-bottom">
-        <div class="card-deck">
-            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Secondary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div>
-            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Secondary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div>
-            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Secondary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div>
-            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Secondary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div>
+<div class="mx-5 mt-3">
+    <div class="row border-bottom my-3">
+        <div>
+            <h4>Hallo {{ current_user.username}}, dass ist deine Podacst-Übersicht.</h6>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
+    <div class="row border-bottom">
+        <h5>Aktuelle Podcast Charts</h5>
+        <div class="podscroll">
+                {% for chart in charts %}
+                <a href="{{ chart['url'] }}">
+                    <div class="col mb-5 pb-5">
+                        <div class="card" style="width: 10rem; height:10rem;">
+                            <img src="{{ chart['artworkUrl100']}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <small class="card-title">{{chart['name']}}</small></br>
+                                <small class="card-subtitle">{{chart['artistName']}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                {% endfor %}
+
+        </div>
+
     </div>
 </div>
 {% endblock %}

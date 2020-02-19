@@ -35,9 +35,25 @@
                     <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <span class="navbar-text">
-                {{ user.username }}
-            </span>
+            <form class="form-inline my-2">
+                {% if current_user.is_authenticated %}
+                <span class="navbar-brand mx-2">{{ current_user.username}}</span>
+
+                <a href="{{ url_for('logout') }}">
+                    <button type="button" class="btn btn-secondary">
+                        Logout
+                    </button>
+                </a>
+                
+                {% else %}
+                <a href="{{ url_for('login') }}">
+                    <button type="button" class="btn btn-secondary">
+                        Login
+                    </button>
+                </a>
+                {% endif %}
+            </form>
+
         </div>
     </nav>
     <div class="row">

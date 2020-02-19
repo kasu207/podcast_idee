@@ -17,10 +17,10 @@ class User(UserMixin, db.Model):
         self.password_hash = generate_password_hash(password)
     
     def check_password(self, password):
-        return check_password_hash(self.passwor_hash, password)
+        return check_password_hash(self.password_hash, password)
 
 #https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database
 
 @login.user_loader
 def load_user(id):
-    return user.query.get(int(id))
+    return User.query.get(int(id))

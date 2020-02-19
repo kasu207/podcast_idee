@@ -1,5 +1,7 @@
 body {
-    padding-top: 3rem;
+    font-family: Roboto;
+    padding-top: 4.5rem;
+    hyphens: auto;
 }
 
 .fixed-top {
@@ -11,9 +13,11 @@ body {
 }
 
 .sidebar-sticky {
+    z-index:1000;
     position: -webkit-sticky;
     position: sticky;
-    top: 48px;
+    top: 56px;
+    bottom:0px;
     height: calc(100vh - 20px);
     padding-top: .5rem;
     overflow-x: hidden;
@@ -30,4 +34,19 @@ body {
 
   .card-columns {
       column-count: 4;
+  }
+  div.podscroll {
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  div.podscroll a {
+    display: inline-block;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  div.podscroll a:hover {
+    background-color: #777;
   }

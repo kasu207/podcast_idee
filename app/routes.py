@@ -1,5 +1,5 @@
 from app import app
-from app.forms import PodcastSearchForm, EpisodeSearchForm, LoginForm
+from app.forms import PodcastSearchForm, EpisodeSearchForm, LoginForm, RegistrationForm
 from app.config import Config
 from flask import Flask, render_template, request, redirect, url_for, flash
 from pymysql import escape_string
@@ -9,13 +9,18 @@ from xml.etree.ElementTree import parse
 from urllib.request import urlopen, Request, urlretrieve
 from urllib.error import HTTPError
 from urllib.parse import quote
-from flask_login import current_user, login_user
+from flask_login import current_user, login_user, login_required, logout_user
+from app import db
+from app.models import User
 
 @app.route('/')
 @app.route('/index')
+@login_required
 def index():
-    user = {'username':'Philipp'}
-    return render_template('index.html', title='Home', user=user)
+    url = 'https://rss.itunes.apple.com/api/v1/de/podcasts/top-podcasts/all/25/explicit.json'
+    response = requests.get(url)
+    pod_charts = json.loads(response.text)
+    return render_template('index.html', title='Home', charts=pod_charts['feed']['results'] )
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -28,22 +33,39 @@ def login():
             flash('Invalid username or password')
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
+        next_page = request.args.get('next')
+        if not next_page or url_parse(next_page).netloc != '':
+            next_page = url_for('index')
+        return redirect(next_page)
         flash('Login requested for user {}, remember_me={}'.format(
             form.username.data, form.remember_me.data))
-        return redirect('/index')
-    user = {'username':'Philipp'}
-    return render_template('login.html', title='Login', form=form, user=user)
+        return redirect('index')
+    return render_template('login.html', title='Login', form=form)
 
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, email=form.email.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Herzlichen Glückwunsch, du bist ein registrierter Nutzer!')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Registrieren', form=form)
+
+
 @app.route('/podcasts', methods=['GET', 'POST'])
 def podcasts():
     form = PodcastSearchForm()
-    user = {'username':'Philipp'}
-    return render_template('podcasts.html', title='Podcasts-', user=user, form=form)
+    return render_template('podcasts.html', title='Podcasts-', form=form)
 
 @app.route('/podcastsearch', methods=['GET'])
 def podcastsearch():
@@ -58,14 +80,12 @@ def podcastsearch():
         response = requests.get(url, params=search)
         json_data = json.loads(response.text)
         results = len(json_data['results'])
-        user = {'username':'Philipp'}
-        return render_template('podcasts.html', title='Podcasts-Search', user=user, pod_raw=json_data['results'], results=results, form=form)
+        return render_template('podcasts.html', title='Podcasts-Search', pod_raw=json_data['results'], results=results, form=form)
 
 @app.route('/episodes')
 def episodes():
     form = EpisodeSearchForm()
-    user = {'username':'Philipp'}
-    return render_template('episodes.html', title='Episodes', user=user, form=form)
+    return render_template('episodes.html', title='Episodes', form=form)
 
 
 @app.route('/episodessearch', methods=['GET'])
@@ -110,10 +130,8 @@ def episodessearch():
                 #return pod_data
             else:
                 print('Error occured')
-
-        user = {'username':'Philipp'}
         results = len(pod_data)
-        return render_template('episodes.html', title='Episodes-Search', user=user, podcasts=pod_data, results=results, form=form)
+        return render_template('episodes.html', title='Episodes-Search', podcasts=pod_data, results=results, form=form)
     if len(query) < 2:
         flash('The search term is too short')
         return redirect('episodes')

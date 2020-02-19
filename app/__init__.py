@@ -10,5 +10,6 @@ db = SQLAlchemy(app) #represents DB
 migrate = Migrate(app, db) #represents Migrate Engine
 
 login = LoginManager(app) #initiierung FlaskLogin
+login.login_view = 'login'
 
 from app import routes, models
