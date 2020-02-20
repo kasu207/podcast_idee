@@ -2,8 +2,14 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <h1>Profil von: {{ user.username }}</h1>
+        <h1>Profil von: {{ user.username }}</h1></br>
         <img src="{{ user.avatar(128) }}">
+        {% if user.about_me %}
+            <p>{{ user.about_me }}</p>
+        {% endif %}
+        {% if user.last_seen %}
+            <p>Last seen: {{ user.last_seen }}</p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

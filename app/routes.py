@@ -13,12 +13,12 @@ from flask_login import current_user, login_user, login_required, logout_user
 from app import db
 from werkzeug.urls import url_parse
 from app.models import User
+from datetime import datetime
 
 @app.route('/')
 @app.route('/index')
-@login_required
 def index():
-    url = 'https://rss.itunes.apple.com/api/v1/de/podcasts/top-podcasts/all/25/explicit.json'
+    url = 'https://rss.itunes.apple.com/api/v1/de/podcasts/top-podcasts/all/6/explicit.json'
     response = requests.get(url)
     pod_charts = json.loads(response.text)
     return render_template('index.html', title='Home', charts=pod_charts['feed']['results'] )
@@ -73,6 +73,12 @@ def user(username):
     #f you want to get all results, or first() 
     # if you want to get just the first result or None if there are zero results.
     return render_template('user.html', user=user)
+
+@app.before_request
+def before_request():
+    if current_user.is_authenticated:
+        current_user.last_seen = datetime.utcnow()
+        db.session.commit()
 
 @app.route('/podcasts', methods=['GET', 'POST'])
 def podcasts():

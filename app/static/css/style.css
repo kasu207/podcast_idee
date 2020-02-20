@@ -1,82 +1,119 @@
+* {
+  font-family: 'Valera','Roboto', sans-serif !important;
+  color: #ffff !important;
+}
+
+.maincolor {
+  background-color: #1BA098 !important;
+  color: #ffff;
+}
+
 body {
-    font-family: Roboto;
-    padding-top: 4.5rem;
-    hyphens: auto;
+  padding-top: 4rem;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: #051622 !important;
+}
+
+.jumbotron {
+  height: 100vh;
+  background-image: url("../img/background.svg") !important;
+  background-size: cover;
+}
+
+#welcome {
+  padding-top: 20vh;
 }
 
 .fixed-top {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  background-color: #fa255e;
 }
 
-.sidebar-sticky {
-    z-index: 1000;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 56px;
-    bottom: 0px;
-    height: calc(100vh - 20px);
-    padding-top: .5rem;
-    overflow-x: hidden;
-    overflow-y: auto;
+main {
+  height: 100%;
+  background-color: #051622;
+  padding-bottom: 4.5rem;
 }
 
 .addScroll {
-    overflow-y: auto;
-    height: 200px;
+  overflow-y: auto;
+  height: 200px;
 }
 
 .card-columns {
-    column-count: 4;
+  -webkit-column-count: 4;
+          column-count: 4;
 }
 
 .card-title {
-    font-size: 24px;
-    font-family: Roboto;
+  font-size: 24px;
+  font-family: Roboto;
 }
-.card-text{
-    font-size: 12px !important;
-    font-family: Roboto;
-    word-break: break-word;
+
+.card-text {
+  font-size: 12px !important;
+  font-family: Roboto;
+  word-break: break-word;
 }
-.elipsis{
-    white-space: nowrap;
-    width: auto;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
+.elipsis {
+  white-space: nowrap;
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .max-lines {
-    display: block;/* or inline-block */
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    overflow: hidden;
-    max-height: 2.6em;
-    line-height: 1.3em;
-  }
+  display: block;
+  /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 2.6em;
+  line-height: 1.3em;
+}
+
 div.podscroll {
-    overflow: auto;
-    white-space: nowrap;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 div.podscroll a {
-    display: inline-block;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
 }
 
 div.podscroll a:hover {
-    background-color: #777;
+  background-color: #777;
 }
 
 .card {
-    max-width: 100%;
+  max-width: 100%;
 }
+
 small.hyphens {
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
+
+#anmeldung {
+  padding-top: 4.5rem;
+  height: 50vh;
+  background-color: #051622;
+}
+
+footer {
+  height: 4.5rem;
+  background-color: #1BA098;
+  position: fixed;
+}
+/*# sourceMappingURL=style.css.map */
