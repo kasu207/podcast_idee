@@ -90,7 +90,7 @@ def podcasts():
 
 @app.route('/genreSearch', methods=['GET'])
 def genreSearch():
-    genres = requests.args,get('genre')
+    genre = request.args.get('genres')
     if genre is None:
         return(url_for('podcasts'))
     else:
@@ -99,7 +99,7 @@ def genreSearch():
         genre_data = json.loads(response.text)
         return render_template('podcasts.html', title="Podcast-Genres", genres=genre_data)
 
-@app.route('/podcastsearch', methods=['GET'])
+@app.route('/podcastsearch/', methods=['GET'])
 def podcastsearch():
     form = PodcastSearchForm()
     query = request.args.get('search')

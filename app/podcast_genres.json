@@ -27,7 +27,7 @@
       ]
     },
     {
-      "categoryID": 1321,
+      "categoryId": 1321,
       "categoryName": "Wirtschaft",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{
@@ -57,7 +57,7 @@
       ]
     },
     {
-      "categoryID": 1303,
+      "categoryId": 1303,
       "categoryName": "Comedy",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "categoryID": 1304,
+      "categoryId": 1304,
       "categoryName": "Bildung",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{
@@ -93,13 +93,13 @@
       ]
     },
     {
-      "categoryID": 1511,
+      "categoryId": 1511,
       "categoryName": "Regierung",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{}]
     },
     {
-      "categoryID": 1483,
+      "categoryId": 1483,
       "categoryName": "Fiktion",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{
@@ -117,7 +117,7 @@
       ]
     },
     {
-      "categoryID": 1512,
+      "categoryId": 1512,
       "categoryName": "Gesundheit und Fitness",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{
@@ -147,13 +147,13 @@
       ]
     },
     {
-      "categoryID": 1487,
+      "categoryId": 1487,
       "categoryName": "Geschichte",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{}]
     },
     {
-      "categoryID": 1305,
+      "categoryId": 1305,
       "categoryName": "Kinder und Familie",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{
@@ -175,7 +175,7 @@
       ]
     },
     {
-      "categoryID": 1502,
+      "categoryId": 1502,
       "categoryName": "Freizeit",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{
@@ -217,7 +217,7 @@
       ]
     },
     {
-      "categoryID": 1310,
+      "categoryId": 1310,
       "categoryName": "Musik",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{
@@ -235,7 +235,7 @@
       ]
     },
     {
-      "categoryID": 1489,
+      "categoryId": 1489,
       "categoryName": "Nachrichten",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{
@@ -269,7 +269,7 @@
       ]
     },
     {
-      "categoryID": 1314,
+      "categoryId": 1314,
       "categoryName": "Religion und Spiritualität",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{
@@ -303,7 +303,7 @@
       ]
     },
     {
-      "categoryID": 1533,
+      "categoryId": 1533,
       "categoryName": "Wissenschaft",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{
@@ -349,7 +349,7 @@
       ]
     },
     {
-      "categoryID": 1524,
+      "categoryId": 1524,
       "categoryName": "Gesellschaft und Kultur",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{
@@ -375,7 +375,7 @@
       ]
     },
     {
-      "categoryID": 1545,
+      "categoryId": 1545,
       "categoryName": "Sport",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{
@@ -441,7 +441,7 @@
       ]
     },
     {
-      "categoryID": 1309,
+      "categoryId": 1309,
       "categoryName": "TV und Film",
       "categoryImg":"https://images.freeimages.com/images/large-previews/fd6/black-white-movie-1437714.jpg",
       "subcategory": [{
@@ -467,13 +467,13 @@
       ]
     },
     {
-      "categoryID": 1318,
+      "categoryId": 1318,
       "categoryName": "Technologie",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{}]
     },
     {
-      "categoryID": 1488,
+      "categoryId": 1488,
       "categoryName": "Wahre Kriminalfälle",
       "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
       "subcategory": [{}]

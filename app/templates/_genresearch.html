@@ -1,16 +1,24 @@
-<div class="row textcolor my-5">
-    <div class="col-sm">
-        <h4>Podcasts nach Kategorien entdecken</h4>
-        <div class="my-2 scrolling-wrapper-flexbox">
-            {% for genre in genres %}
-            <div class="card bg-dark mx-1 my-2 text-white float-left" id="genreCard" style="max-width: 146px;">
-                <img class="card-img my-1" src="{{genre['categoryImg']}}" alt="Card image">
-                <div class="card-img-overlay">
-                    <h5 class="">{{ genre['categoryName'] }}</h5>
+<div class="container">
+    <div class="row textcolor my-5">
+        <div class="col-sm">
+            <h4>Podcasts nach Kategorien entdecken</h4>
+            <div class="my-2 scrolling-wrapper-flexbox">
+                {% for genre in genres %}
+                <div class="card bg-dark mx-1 my-2 text-white float-left" id="genreCard" style="max-width: 146px;">
+                    <a href="#" onclick="">
+                        <img class="card-img my-1" src="{{genre['categoryImg']}}" alt="Card image">
+                        <div class="card-img-overlay">
+                            <h5 class="" value="genres" name="genres">
+                                {{ genre['categoryName'] }}</h5>
+                        </div>
+                    </a>
                 </div>
+                <!--<button type="button" class="btn btn-outline-info btn-sm my-1 mx-1" value="loadGenres" name="genre"> {{ genre['categoryName'] }}</button>-->
+                {% endfor %}
             </div>
-            <!--<button type="button" class="btn btn-outline-info btn-sm my-1 mx-1" value="loadGenres" name="genre"> {{ genre['categoryName'] }}</button>-->
-            {% endfor %}
         </div>
+    </div>
+    <div class="row">
+        <p id="categoryId"></p>
     </div>
 </div>
