@@ -12,7 +12,7 @@
 }
 
 .darkcolor {
-  background-color: #051622 !important;
+  background-color: #1d313f !important;
   color: #ffff !important;
 }
 
@@ -21,7 +21,7 @@ body {
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
-  background-color: #051622 !important;
+  background-color: #1d313f !important;
 }
 
 ul.navbar-nav {
@@ -58,7 +58,7 @@ body > nav > a, #navbarNav > ul > li > a {
 
 main {
   height: 100%;
-  background-color: #051622;
+  background-color: #1d313f;
   padding-bottom: 4.5rem;
 }
 
@@ -67,14 +67,35 @@ main {
 }
 
 #searchfield {
-  background-color: #051622;
+  background-color: #1d313f;
   border-color: #1BA098;
   border-width: 2px;
 }
 
-.addScroll {
-  overflow-y: auto;
-  height: 200px;
+.scrolling-wrapper-flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.scrolling-wrapper-flexbox .card {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.scrolling-wrapper-flexbox::-webkit-scrollbar {
+  display: none;
+}
+
+#genreCard:hover {
+  border: 3px solid #fa255e;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px rgba(250, 37, 94, 0.6);
+          box-shadow: 5px 5px rgba(250, 37, 94, 0.6);
 }
 
 .card-columns {
@@ -128,7 +149,7 @@ div.podscroll a {
 
 .card {
   max-width: 100%;
-  background-color: #051622 !important;
+  background-color: #1d313f !important;
   border-color: #fa255e !important;
 }
 
@@ -141,7 +162,7 @@ small.hyphens {
 #anmeldung {
   padding-top: 4.5rem;
   height: 50vh;
-  background-color: #051622;
+  background-color: #1d313f;
 }
 
 footer {

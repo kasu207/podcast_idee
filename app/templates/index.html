@@ -8,29 +8,31 @@
             <div>
                 {% if current_user.is_authenticated %}
                 <h1>Hallo {{ current_user.username}}, dass ist deine Podacst-Übersicht.</h1>
-                    {% else %}
-                    <h1>Herzlich Willkommen bei Podcast Deck - Deine Podcast-Plattform</h1>
-                        {% endif %}
+                {% else %}
+                <h1>Herzlich Willkommen bei Podcast Deck - Deine Podcast-Plattform</h1>
+                {% endif %}
             </div>
         </div>
         <div class="row mt-3">
             <h5>Aktuelle Podcast Charts</h5>
         </div>
-        <div class="row my-3">
-            {% for chart in charts %}
-            <a href="{{ chart['url'] }}">
-                <div class="col mb-4 pb-3">
-                    <div class="card border-dark shadow" style="width: 10rem; height:10rem;">
-                        <img src="{{ chart['artworkUrl100']}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <!--<small class="card-text elipsis">{{chart['name']}}</small>
-                                <small class="card-text elipsis">{{ chart['artistName'] }}</small>-->
+        <div class="row my-3 ">
+            <div class="my-2 scrolling-wrapper-flexbox">
+                {% for chart in charts %}
+                <a href="{{ chart['url'] }}">
+                    <div class="col mb-4 pb-3">
+                        <div class="card border-dark shadow" style="width: 15rem; height:15rem;">
+                            <img src="{{ chart['artworkUrl100']}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!--<small class="card-text elipsis">{{chart['name']}}</small>
+                                    <small class="card-text elipsis">{{ chart['artistName'] }}</small>-->
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-    
-            {% endfor %}
+                </a>
+                {% endfor %}
+            </div>
+
         </div>
     </div>
 </div>
@@ -41,10 +43,10 @@
             <div class="col-md-6">
                 <h2>Deine Podcast-Plattform</h2>
                 <span>Entdecke Podcasts und Episoden die deinen Interessen entsprechen.</span>
-                <ul class="h6">
-                    <li>Multiple Playlisten</li>
-                    <li>Episoden Vorschläge</li>
-                    <li>Podcasts direkt im Browser hören</li>
+                <ul class="list-group list-group-flush h4 darkcolor">
+                    <li class="list-group-item darkcolor"> * Multiple Playlisten</li>
+                    <li class="list-group-item darkcolor"> * Episoden Vorschläge</li>
+                    <li class="list-group-item darkcolor"> * Podcasts direkt im Browser hören</li>
                 </ul>
             </div>
             <div class="col-md-6">
@@ -56,7 +58,7 @@
 </section>
 <div class="container">
 
-    
+
 </div>
 
 {% endblock %}

@@ -19,7 +19,7 @@ from datetime import datetime
 @app.route('/')
 @app.route('/index')
 def index():
-    url = 'https://rss.itunes.apple.com/api/v1/de/podcasts/top-podcasts/all/6/explicit.json'
+    url = 'https://rss.itunes.apple.com/api/v1/de/podcasts/top-podcasts/all/15/explicit.json'
     response = requests.get(url)
     pod_charts = json.loads(response.text)
     return render_template('index.html', title='Home', charts=pod_charts['feed']['results'] )
@@ -88,6 +88,17 @@ def podcasts():
     form = PodcastSearchForm()
     return render_template('podcasts.html', title='Podcasts', form=form, genres=genres['genres'])
 
+@app.route('/genreSearch', methods=['GET'])
+def genreSearch():
+    genres = requests.args,get('genre')
+    if genre is None:
+        return(url_for('podcasts'))
+    else:
+        url = 'https://itunes.apple.com/de/search?term=podcast&genreId=1549&limit=200&country=de'
+        response = requests.get(url)
+        genre_data = json.loads(response.text)
+        return render_template('podcasts.html', title="Podcast-Genres", genres=genre_data)
+
 @app.route('/podcastsearch', methods=['GET'])
 def podcastsearch():
     form = PodcastSearchForm()
@@ -101,7 +112,7 @@ def podcastsearch():
         response = requests.get(url, params=search)
         json_data = json.loads(response.text)
         results = len(json_data['results'])
-        return render_template('podcasts.html/', title='Podcasts-Search', pod_raw=json_data['results'], results=results, form=form)
+        return render_template('podcasts.html', title='Podcasts-Search', pod_raw=json_data['results'], results=results, form=form)
 
 @app.route('/podcast/<podcastname>')
 def podcast(podcastname):
