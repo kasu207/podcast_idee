@@ -1,3 +1,4 @@
+import os
 from app import app
 from app.forms import PodcastSearchForm, EpisodeSearchForm, LoginForm, RegistrationForm
 from app.config import Config
@@ -82,8 +83,10 @@ def before_request():
 
 @app.route('/podcasts', methods=['GET', 'POST'])
 def podcasts():
+    with app.open_resource('podcast_genres.json') as f:
+        genres = json.load(f)
     form = PodcastSearchForm()
-    return render_template('podcasts.html', title='Podcasts-', form=form)
+    return render_template('podcasts.html', title='Podcasts', form=form, genres=genres['genres'])
 
 @app.route('/podcastsearch', methods=['GET'])
 def podcastsearch():
@@ -94,11 +97,11 @@ def podcastsearch():
     else:
         query = escape_string(query)
         search = {'term': query, 'entity': 'podcast', 'media': 'podcast', 'country': 'DE', 'limit':'200'}
-        url= 'https://itunes.apple.com/search?'
+        url= 'https://itunes.apple.com/de/search?'
         response = requests.get(url, params=search)
         json_data = json.loads(response.text)
         results = len(json_data['results'])
-        return render_template('podcasts.html', title='Podcasts-Search', pod_raw=json_data['results'], results=results, form=form)
+        return render_template('podcasts.html/', title='Podcasts-Search', pod_raw=json_data['results'], results=results, form=form)
 
 @app.route('/podcast/<podcastname>')
 def podcast(podcastname):
@@ -108,7 +111,6 @@ def podcast(podcastname):
 def episodes():
     form = EpisodeSearchForm()
     return render_template('episodes.html', title='Episodes', form=form)
-
 
 @app.route('/episodessearch', methods=['GET'])
 def episodessearch():
@@ -120,7 +122,7 @@ def episodessearch():
         query = escape_string(query)
         print(type(query))
         search = {'term': query, 'entity': 'podcast', 'attribute': 'titleTerm', 'media': 'podcast', 'country': 'DE', 'limit':'200'}
-        url= 'https://itunes.apple.com/search?'
+        url= 'https://itunes.apple.com/de/search?'
         response = requests.get(url, params=search)
         json_data = json.loads(response.text)
         print(json_data)

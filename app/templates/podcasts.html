@@ -2,68 +2,85 @@
 
 {% block content %}
 <div class="container mt-3">
-    <div class="row">
+    <div class="row textcolor my-5">
+        <div class="col-sm-6">
+            <h3>Auf dieser Seite kannst du verschiedene Möglichkeiten nutzen, um den perfekten Podcast für dich zu
+                finden.</h3>
+        </div>
+        <div class="col-sm-6">
+            <ul>
+                <li>
+                    Podcasts nach Kategorien entdecken
+                </li>
+                <li>
+                    Podcasts nach einem Keyword finden
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% include '_genresearch.html' %}
+    <div class="row mt-4">
         <div class="col-sm">
-            <div class="card mt-3">
-                <div class="card-body">
-                    <form class="form my-2 my-lg-0 border-bottom" method="GET" action="{{ url_for('podcastsearch')}}">
-                        <div class="form-group">
-                            <div class="form-group" id="loadpodcasts">
-                                {{ form.podcast.label(class="form-control-label") }}
-                                {% if form.podcast.errors %}
-                                {{ form.podcast(class="form-control form-control-lg is-invalid") }}
-                                <div class="invalid-feedback">
-                                    {% for error in form.podcasts.errors %}
-                                    <span> {{error}} </span>
-                                    {% endfor %}
-                                </div>
-                                {% else %}
-                                <input type="text" name="search" class="form-control form-control-lg"
-                                    placeholder="search">
-                                {% endif %}
-                            </div>
+            <form class="form my-2 my-lg-0 border-bottom" id="podcastsearch" method="GET"
+                action="{{ url_for('podcastsearch')}}">
+                <div class="form-group">
+                    <div class="form-group" id="loadpodcasts">
+                        {{ form.podcast.label(class="form-control-label h4") }}
+                        {% if form.podcast.errors %}
+                        {{ form.podcast(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.podcasts.errors %}
+                            <span> {{error}} </span>
+                            {% endfor %}
                         </div>
-                        <div class="form-group">
-                            {{ form.submit(class="btn btn-outline-success my-2 my-sm-0") }}
-                        </div>
-                    </form>
-                    <div class="border-bottom my-2">
-                        <h5>Search Results: {{ results }}</h5>
+                        {% else %}
+                        <input style="color:white;" type="text" id="searchfield" name="search"
+                            class="form-control form-control-lg" placeholder="Podcasts-Suchen">
+                        {% endif %}
                     </div>
-                    <!--Load Podcasts-->
-                    <div class="card-columns">
-                        {% for data in pod_raw %}
-                        <div class="card my-3" style="max-width: 344px; max-height: 148px;">
-                            <div class="row no-gutters ">
-                                <div class="col-md-8">
-                                    <div class="card-body pb-2">
-                                        <div class="card-title elipsis">{{ data['artistName'] }}</div>
-                                        <div class="card-text max-lines mt-1">{{ data['collectionName'] }}</div>
-                                        <a class="card-link" href="{{ data['trackViewUrl'] }}">ZUM PODCAST</a>
-                                    </div>
-                                    
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card-body">
-                                        <img class="card-img" width="80px" height="80px"
-                                        src="{{ data['artworkUrl100'] }}" alt="Card image">
-                                    </div>
-                                </div>
-                            </div>
+                </div>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-success maincolor my-2 my-sm-0") }}
+                </div>
+            </form>
+            <div class="border-bottom my-2">
+                <h5 class="textcolor">Suchergebnisse: {{ results }}</h5>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card-columns">
+            {% for data in pod_raw %}
+            <div class="card my-3 textcolor">
+                <div class="card-body pb-2">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="card-title h5 max-lines">{{ data['collectionName'] }}</div>
+                            <div class="card-text max-lines mt-1">{{ data['artistName'] }}</div>
+                            <a class="card-link" href="{{ data['trackViewUrl'] }}">
+                                <div class="btn maincolor my-2">ZUM PODCAST</div>
+                            </a>
                         </div>
-                        {% endfor %}
+                        <div class="col-sm-4">
+                            <img class="card-img" width="80px" height="auto" src="{{ data['artworkUrl100'] }}"
+                                alt="Card image">
+                        </div>
                     </div>
-                    <!--Load Relevant Results Data-->
-                    <!--
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!--Load Podcasts-->
+
+    <!--Load Relevant Results Data-->
+    <!--
                     {% for cast in podcasts %}
                     <div class="card my-4">
                         <div class="card-header">{{ cast.title }}</div>
                         <div class="card-footer"><a href={{ cast.link }}>{{ cast.link }}</a></div>
                     </div>
                     {% endfor %}-->
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 {% endblock %}

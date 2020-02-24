@@ -1,0 +1,482 @@
+{
+  "genres": [{
+      "categoryId": 1301,
+      "categoryName": "Kunst",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1482",
+          "name": "Bücher"
+        },
+        {
+          "id": "1402",
+          "name": "Design"
+        }, {
+          "id": "1306",
+          "name": "Essen"
+        }, {
+          "id": "1405",
+          "name": "Darstellende Kunst"
+        }, {
+          "id": "1406",
+          "name": "Bildende Kunst"
+        },
+        {
+          "id": "1459",
+          "name": "Mode und Schönheit"
+        }
+      ]
+    },
+    {
+      "categoryID": 1321,
+      "categoryName": "Wirtschaft",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1410",
+          "name": "Karriere"
+        },
+        {
+          "id": "1412",
+          "name": "Geldanlage"
+        },
+        {
+          "id": "1491",
+          "name": "Management"
+        },
+        {
+          "id": "1492",
+          "name": "Marketing"
+        },
+        {
+          "id": "1493",
+          "name": "Firmengründung"
+        },
+        {
+          "id": "1494",
+          "name": "Gemeinnützig"
+        }
+      ]
+    },
+    {
+      "categoryID": 1303,
+      "categoryName": "Comedy",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1495",
+          "name": "Impro-Comepdy"
+        },
+        {
+          "id": "1496",
+          "name": "Comedy-Interviews"
+        },
+        {
+          "id": "1497",
+          "name": "Stand-Up-Comedy"
+        }
+      ]
+    },
+    {
+      "categoryID": 1304,
+      "categoryName": "Bildung",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1498",
+          "name": "Sprachen lernen"
+        },
+        {
+          "id": "1499",
+          "name": "So geht's"
+        },
+        {
+          "id": "1500",
+          "name": "Selbstverwirklichung"
+        }
+      ]
+    },
+    {
+      "categoryID": 1511,
+      "categoryName": "Regierung",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{}]
+    },
+    {
+      "categoryID": 1483,
+      "categoryName": "Fiktion",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1486",
+          "name": "Comedy-Fiction"
+        },
+        {
+          "id": "1484",
+          "name": "Drama"
+        },
+        {
+          "id": "1485",
+          "name": "Science-Fiction"
+        }
+      ]
+    },
+    {
+      "categoryID": 1512,
+      "categoryName": "Gesundheit und Fitness",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1513",
+          "name": "Alterantive Therapien"
+        },
+        {
+          "id": "1514",
+          "name": "Fitness"
+        },
+        {
+          "id": "1515",
+          "name": "Ernährung"
+        },
+        {
+          "id": "1516",
+          "name": "Sexualität"
+        },
+        {
+          "id": "1517",
+          "name": "Mentale Gesundheit"
+        },
+        {
+          "id": "1518",
+          "name": "Medizin"
+        }
+      ]
+    },
+    {
+      "categoryID": 1487,
+      "categoryName": "Geschichte",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{}]
+    },
+    {
+      "categoryID": 1305,
+      "categoryName": "Kinder und Familie",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1519",
+          "name": "Bildung für Kids"
+        },
+        {
+          "id": "1520",
+          "name": "Geschichten für Kids"
+        },
+        {
+          "id": "1521",
+          "name": "Kindererziehung"
+        },
+        {
+          "id": "1522",
+          "name": "Haus- und Wildtiere"
+        }
+      ]
+    },
+    {
+      "categoryID": 1502,
+      "categoryName": "Freizeit",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1501",
+          "name": "Kurse"
+        },
+        {
+          "id": "1503",
+          "name": "Rund ums Auto"
+        },
+        {
+          "id": "1504",
+          "name": "Luftfahrt"
+        },
+        {
+          "id": "1505",
+          "name": "Hobbys"
+        },
+        {
+          "id": "1506",
+          "name": "Basteln"
+        },
+        {
+          "id": "1507",
+          "name": "Spiele"
+        },
+        {
+          "id": "1508",
+          "name": "Heim und Garten"
+        },
+        {
+          "id": "1509",
+          "name": "Videospiele"
+        },
+        {
+          "id": "1510",
+          "name": "Animation und Manga"
+        }
+      ]
+    },
+    {
+      "categoryID": 1310,
+      "categoryName": "Musik",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1523",
+          "name": "Musikrezension"
+        },
+        {
+          "id": "1524",
+          "name": "Musikgeschichte"
+        },
+        {
+          "id": "1525",
+          "name": "Musikinterviews"
+        }
+      ]
+    },
+    {
+      "categoryID": 1489,
+      "categoryName": "Nachrichten",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1526",
+          "name": "Nachrichten des Tages"
+        },
+        {
+          "id": "1527",
+          "name": "Politik"
+        },
+        {
+          "id": "1528",
+          "name": "Neues aus der Technik"
+        },
+        {
+          "id": "1529",
+          "name": "Sportnews"
+        },
+        {
+          "id": "1530",
+          "name": "Kommentare"
+        },
+        {
+          "id": "1531",
+          "name": "Aktuelles aus der Unterhaltung"
+        },
+        {
+          "id": "1490",
+          "name": "Wirtschaftsnachrichten"
+        }
+      ]
+    },
+    {
+      "categoryID": 1314,
+      "categoryName": "Religion und Spiritualität",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1438",
+          "name": "Buddhismus"
+        },
+        {
+          "id": "1439",
+          "name": "Christentum"
+        },
+        {
+          "id": "1463",
+          "name": "Hinduismus"
+        },
+        {
+          "id": "1440",
+          "name": "Islam"
+        },
+        {
+          "id": "1441",
+          "name": "Judentum"
+        },
+        {
+          "id": "1444",
+          "name": "Spiritualität"
+        },
+        {
+          "id": "1532",
+          "name": "Religion"
+        }
+      ]
+    },
+    {
+      "categoryID": 1533,
+      "categoryName": "Wissenschaft",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1538",
+          "name": "Astronomie"
+        },
+        {
+          "id": "1539",
+          "name": "Chemie"
+        },
+        {
+          "id": "1540",
+          "name": "Geowissenschaften"
+        },
+        {
+          "id": "1541",
+          "name": "Biowissenschaften"
+        },
+        {
+          "id": "1536",
+          "name": "Mathematik"
+        },
+        {
+          "id": "1534",
+          "name": "Naturwissenschaften"
+        },
+        {
+          "id": "1535",
+          "name": "Sozialwissenschaften"
+        },
+        {
+          "id": "1536",
+          "name": "Mathematik"
+        },
+        {
+          "id": "1537",
+          "name": "Natur"
+        },
+        {
+          "id": "1542",
+          "name": "Physik"
+        }
+      ]
+    },
+    {
+      "categoryID": 1524,
+      "categoryName": "Gesellschaft und Kultur",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1544",
+          "name": "Beziehung"
+        },
+        {
+          "id": "1543",
+          "name": "Dokumentation"
+        },
+        {
+          "id": "1302",
+          "name": "Tagebücher"
+        },
+        {
+          "id": "1320",
+          "name": "Reisen und Orte"
+        },
+        {
+          "id": "1443",
+          "name": "Philosophie"
+        }
+      ]
+    },
+    {
+      "categoryID": 1545,
+      "categoryName": "Sport",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{
+          "id": "1560",
+          "name": "Fantasy Sport"
+        }, {
+          "id": "1546",
+          "name": "Fußball"
+        },
+        {
+          "id": "1547",
+          "name": "Football"
+        },
+        {
+          "id": "1548",
+          "name": "Basketball"
+        },
+        {
+          "id": "1549",
+          "name": "Baseball"
+        },
+
+        {
+          "id": "1550",
+          "name": "Eishockey"
+        },
+        {
+          "id": "1551",
+          "name": "Läufer"
+        },
+        {
+          "id": "1552",
+          "name": "Rugby"
+        },
+        {
+          "id": "1553",
+          "name": "Golf"
+        },
+        {
+          "id": "1554",
+          "name": "Cricket"
+        },
+        {
+          "id": "1555",
+          "name": "Wrestling"
+        },
+        {
+          "id": "1556",
+          "name": "Tennis"
+        },
+        {
+          "id": "1557",
+          "name": "Volleyball"
+        },
+        {
+          "id": "1558",
+          "name": "Schwimmen"
+        },
+        {
+          "id": "1559",
+          "name": "Abenteuer Natur"
+        }
+      ]
+    },
+    {
+      "categoryID": 1309,
+      "categoryName": "TV und Film",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/fd6/black-white-movie-1437714.jpg",
+      "subcategory": [{
+          "id": "1561",
+          "name": "TV-Rezensionen"
+        },
+        {
+          "id": "1562",
+          "name": "Backstage"
+        },
+        {
+          "id": "1563",
+          "name": "Filmrezension"
+        },
+        {
+          "id": "1564",
+          "name": "Filmgeschichte"
+        },
+        {
+          "id": "1565",
+          "name": "Filminterviews"
+        }
+      ]
+    },
+    {
+      "categoryID": 1318,
+      "categoryName": "Technologie",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg",
+      "subcategory": [{}]
+    },
+    {
+      "categoryID": 1488,
+      "categoryName": "Wahre Kriminalfälle",
+      "categoryImg":"https://images.freeimages.com/images/large-previews/f9c/statue-of-justice-1539051.jpg",
+      "subcategory": [{}]
+    }
+  ]
+}

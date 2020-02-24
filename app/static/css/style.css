@@ -1,11 +1,19 @@
 * {
   font-family: 'Valera','Roboto', sans-serif !important;
-  color: #ffff !important;
 }
 
 .maincolor {
   background-color: #1BA098 !important;
+  color: #ffff !important;
+}
+
+.textcolor {
   color: #ffff;
+}
+
+.darkcolor {
+  background-color: #051622 !important;
+  color: #ffff !important;
 }
 
 body {
@@ -16,14 +24,23 @@ body {
   background-color: #051622 !important;
 }
 
+ul.navbar-nav {
+  color: #ffff !important;
+}
+
 .jumbotron {
-  height: 100vh;
   background-image: url("../img/background.svg") !important;
   background-size: cover;
+  color: #ffff !important;
 }
 
 #welcome {
   padding-top: 20vh;
+}
+
+#anmeldung {
+  color: #ffff !important;
+  word-break: break-word;
 }
 
 .fixed-top {
@@ -35,10 +52,24 @@ body {
   background-color: #fa255e;
 }
 
+body > nav > a, #navbarNav > ul > li > a {
+  color: #ffff !important;
+}
+
 main {
   height: 100%;
   background-color: #051622;
   padding-bottom: 4.5rem;
+}
+
+#podcastsearch {
+  color: #ffff !important;
+}
+
+#searchfield {
+  background-color: #051622;
+  border-color: #1BA098;
+  border-width: 2px;
 }
 
 .addScroll {
@@ -91,12 +122,14 @@ div.podscroll a {
   text-decoration: none;
 }
 
-div.podscroll a:hover {
-  background-color: #777;
+.card-columns {
+  display: block;
 }
 
 .card {
   max-width: 100%;
+  background-color: #051622 !important;
+  border-color: #fa255e !important;
 }
 
 small.hyphens {

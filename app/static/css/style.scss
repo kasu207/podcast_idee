@@ -3,27 +3,41 @@ $subcolor: #C39EA0;
 $acentcolor: #fa255e;
 $textcolor: #ffff;
 $darkcolor: #051622;
+$darkacent:#444d56;
 
 *{
     font-family: 'Valera','Roboto', sans-serif !important;
-    color:$textcolor !important;
 }
 .maincolor{
     background-color: $maincolor !important;
-    color: $textcolor
+    color: $textcolor !important;
+}
+.textcolor{
+    color:$textcolor;
+}
+.darkcolor{
+    background-color: $darkcolor !important;
+    color: $textcolor !important;
 }
 body {
     padding-top: 4rem;
     hyphens: auto;
     background-color: $darkcolor !important;
 }
+ul.navbar-nav{
+    color:$textcolor !important;
+}
 .jumbotron{
-    height:100vh;
     background-image: url('../img/background.svg') !important;
     background-size: cover;
+    color:$textcolor !important;
 }
 #welcome{
     padding-top: 20vh;
+}
+#anmeldung{
+    color:$textcolor !important;
+    word-break: break-word  ;
 }
 .fixed-top {
     position: fixed;
@@ -32,11 +46,23 @@ body {
     left: 0;
     z-index: 1030;
     background-color: $acentcolor;
+    
+}
+body > nav > a, #navbarNav > ul > li > a{
+    color:$textcolor !important;
 }
 main{
     height:100%;
     background-color: $darkcolor;
     padding-bottom:4.5rem;
+}
+#podcastsearch{
+    color:$textcolor !important;
+}
+#searchfield{
+    background-color: $darkcolor;
+    border-color: $maincolor;
+    border-width: 2px;
 }
 .addScroll {
     overflow-y: auto;
@@ -82,12 +108,14 @@ div.podscroll a {
     text-decoration: none;
 }
 
-div.podscroll a:hover {
-    background-color: #777;
+.card-columns{
+    display: block;
 }
-
 .card {
     max-width: 100%;
+    background-color: $darkcolor !important;
+    border-color: $acentcolor !important;
+    //box-shadow: 0 4px 8px 0 rgba(133, 114, 114, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
 }
 
 small.hyphens {
